@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname
+            this.age = age
+        }
+        Star.prototype.sing = function () {
+            console.log('我会唱歌');
+        }
+        var star = new Star('dsad', 18)
+        console.log(star); //对象身上系统会自动添加一个__proto__指向我们构造函数的原型对象 输出可以看到
+        console.log(star.__proto__ === Star.prototype);
+        // 方法的查找规则：首先先看star实例对象上是否有sing的方法，如果有就执行这个对象上的sing
+        // 如果没有sing的这个方法，因为有__proto__的存在，就去构造函数原型对象prototype身上去查找sing的这个方法
+    </script>
+</body>
+
+</html>
