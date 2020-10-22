@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在继承中，如果实例化子类输出的一个方法，先看子类中是否有这个方法，如果有先执行子类的
+        // 在继承中，如果子类没有，就去查父类有没有这个方法，如果有，就执行分类的方法（就近原则）
+        class Father {
+            constructor() {
+
+            }
+            say() {
+                console.log('我是你爹');
+            }
+            sd() {
+                console.log('我是你大爷');
+                
+            }
+        }
+
+        class Son extends Father{
+            say() {
+                console.log('我是你儿子');
+            }
+        }
+        var son = new Son();
+        son.sd()
+    </script>
+</body>
+
+</html>

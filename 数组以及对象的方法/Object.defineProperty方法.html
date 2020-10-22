@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.defineProperty() //定义新属性或修改原有属性
+        var obj ={
+            id:1,
+            pname:'小米',
+            price:1999
+        }
+        obj.num = 1000;
+        // Object.defineProperty如果不存在所要修改的属性那么它就会新建这个属性并且给他赋值，如果存在属性那么就会修改它对象属性的值
+        Object.defineProperty(obj,'num',{
+            value:100,
+            enumerable:false
+        })
+        Object.defineProperty(obj,'address',{
+            value:'浙江省绍兴市', //属性的值，存在属性则修改 没有就新增属性
+            writable:false, //可重写 如果为false不允许修改这个属性值 默认属性为false
+            enumerable:false, //如果值为false那么他是不允许遍历，默认值为false
+            configurable:false //如果configurable:false则不允许删除这个属性 默认为false
+        })
+        obj.id = 3
+        console.log(Object.keys(obj));
+    </script>    
+</body>
+</html>
