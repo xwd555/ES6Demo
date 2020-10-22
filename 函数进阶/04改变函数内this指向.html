@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 改变函数内this指向 call() apply() bind()可以改变this指向
+        // call()方法
+        var o = {
+            name:'andy'
+        }
+
+        function fn(a,b){
+            console.log(this);
+            console.log(a+b);
+        }
+        fn.call(o)
+
+        // call()主要作用实现继承
+        function Father(uname,age,sex){
+            this.uname = uname
+            this.age = age
+            this.sex = sex
+        }
+        function Son(uname,age,sex){
+            Father.call(this,uname,age,sex)
+        }
+
+        var son = new Son('蔡徐坤',18,'女');
+        console.log(son);
+    </script>
+</body>
+</html>

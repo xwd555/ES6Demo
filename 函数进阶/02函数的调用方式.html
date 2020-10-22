@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数的调用方法
+
+        // 1.普通函数
+        function fn(){
+            console.log('普通函数' + this);
+        }
+        fn();
+        // 2.对象的方法
+        var o = {
+            sayHi:function(){
+                console.log('对象函数' + this);
+            }
+        }
+        o.sayHi()
+        // 3.构造函数
+        function Star(){
+            console.log(this);
+        }
+        var cxk =  new Star()
+        // 4.绑定事件函数
+        btn.click = function(){}
+        // 5.定时器函数
+        setInterval(function(){},1000) //定时器每一秒钟调用一次
+        // 6.立即执行函数
+        (function(){
+            console.log('自动调用函数');
+        })()
+    </script>
+</body>
+</html>
