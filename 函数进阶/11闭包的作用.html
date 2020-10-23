@@ -9,14 +9,26 @@
     <script>
         // 闭包指有权访问另一边函数作用域中变量的数
         // 一个作用域可以访问另一个函数的局部变量
+        // 闭包的作用在于延伸变量的作用范围
+        // function fn(){
+        //     var num = 10
+        //     function foo(){
+        //         console.log(num)
+        //     }
+        //     return foo
+        // }
+        // var f = fn()
+        // f()
+
+
         function fn(){
             var num = 10
-            function foo(){
+            return function(){
                 console.log(num)
             }
-            foo()
         }
-        fn()
+        var f = fn()
+        f() 
     </script>
 </body>
 </html>

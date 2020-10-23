@@ -7,14 +7,15 @@
 </head>
 <body>
     <script>
-        // 闭包指有权访问另一边函数作用域中变量的数
-        // 一个作用域可以访问另一个函数的局部变量
+        var num = 1;
+
         function fn(){
-            var num = 10
-            function foo(){
-                console.log(num)
+            console.log('我要打印6句话');
+            if(num == 6){
+                return
             }
-            foo()
+            num ++
+            fn()
         }
         fn()
     </script>

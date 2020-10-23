@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用递归求出斐波那契数列1,1,2,3,5,8,13.....
+        // 思路:只需要知道用户输入的n的前两项就能知道n对应的序列
+
+        function fn(n){
+            if(n==1||n==2) return 1
+            return fn(n-1) + fn(n-2)
+        }
+        console.log(fn(5));
+    </script>
+</body>
+</html>
