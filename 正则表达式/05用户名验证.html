@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="uname"> <span>请输入用户名</span>
+    <script>
+        var rg = /^[a-zA-Z0-9_-]{6,16}$/
+        let uname = document.querySelector('.uname')
+        let span = document.querySelector('span')
+        uname.onblur = function(){
+            if(rg.test(this.value)){
+                span.style.color="green"
+                span.innerHTML = '输入用户名正确'
+            }else{
+                span.style.color="red"
+                span.innerHTML = '输入用户名错误'
+            }
+        }
+        
+    </script>
+</body>
+</html>

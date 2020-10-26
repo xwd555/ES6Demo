@@ -9,29 +9,26 @@
 
 <body>
     <script>
-        let s = { name: { asd: '123' } }
-        let d = Object.assign({}, s)
-        d.name = 'sda'
-        console.log(d, s)
         // 浅拷贝只拷贝一层，更深层次对象级别的只拷贝引用
         // 深拷贝拷贝多层，每一级别的数据都会拷贝
         var obj = {
             id: 1,
             name: 'sandy',
-            oooo: {
-                name: 'dsad',
-                age: 18
+            msg:{
+                age:18
             }
         }
-        var abc = Object.assign({}, obj)
-        var o = JSON.parse(JSON.stringify(obj))
         o = obj
-        for (const k in obj) {
-            o[k] = obj[k]
-        }
-        o.oooo.name = 'tomy'
-        console.log(obj);
+        // for (const k in obj) {
+        //     o[k] = obj[k]
+        // }
+        // console.log(o);
+        // o.msg.age = 11
+        // console.log(obj);
+        Object.assign(o,obj)
         console.log(o);
+        o.msg.age = 19
+        console.log(obj);
 
     </script>
 </body>

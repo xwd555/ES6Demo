@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var rg = /abc/ //只要包含abc
+        // 字符类: [] 只匹配其中一个就可以
+        var rbg = /[abc]/ //包含有a包含有b包含有c
+        var rbg1 = /^[abc]$/ //三选一
+        var rbg2 = /^[a-z]$/ //匹配a-z 任意一个字母
+        var rgb3 = /^[^a-zA-z0-9_-]$/ //[^]这样是把[]的内部取反 指的是不取[]内部的数据
+        console.log(rgb3.test(8));
+    </script>
+</body>
+</html>
